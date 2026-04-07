@@ -219,6 +219,30 @@ a {
     margin: 0 auto;
     padding: 0 2rem;
     width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 0 0 320px;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .greeting-container {
@@ -503,6 +527,20 @@ footer {
     .about-grid { grid-template-columns: 1fr; }
     
     .nav-links { display: none; } /* Simple approach for mobile logic */
+    
+    .hero-content {
+        flex-direction: column-reverse; /* Image above text = column-reverse since text is first in HTML? No, text is first, so column-reverse puts text AT BOTTOM. Let's use column to put text top, image bottom. Wait, user usually wants image top on mobile. So column-reverse is good! */
+        text-align: center;
+        gap: 3rem;
+    }
+    .hero-cta {
+        justify-content: center;
+    }
+    .hero-image {
+        flex: 0 0 280px;
+        height: 380px;
+        margin: 0 auto;
+    }
 }
 
 /* RTL Support via JS (Arabic) */
