@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aidan Anu Sam | Portfolio</title>
+    <meta name="description" content="Portfolio of Aidan Anu Sam. Aspiring Computer Science Engineer.">
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="no-scroll">
+
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="greeting-container" id="splash-greeting-container">
+            <h1 id="dynamic-greeting" class="greeting">Hello</h1>
+        </div>
+    </div>
+
+    <!-- Floating Dock Navigation -->
+    <nav class="dock-nav">
+        <div class="dock-content">
+            <a href="#about" title="About" data-i18n-title="nav_about" class="dock-item">
+                <!-- User Icon -->
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </a>
+            <a href="#projects" title="Work" data-i18n-title="nav_work" class="dock-item">
+                <!-- Briefcase Icon -->
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+            </a>
+            <a href="#certificates" title="Certificates" data-i18n-title="nav_cert" class="dock-item">
+                <!-- Award Icon -->
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+            </a>
+            <a href="#contact" title="Contact" data-i18n-title="nav_contact" class="dock-item">
+                <!-- Envelope Icon -->
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </a>
+
+            <div class="dock-item dock-lang" title="Language" data-i18n-title="nav_lang">
+                <!-- Globe Icon -->
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
+                </svg>
+                <select id="lang-selector" class="lang-selector-floating">
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                    <option value="ml">മലയാളം</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header id="hero" class="section hero">
+        <div class="hero-content">
+            <h3 class="hero-greeting reveal-text"
+                style="font-size: 2rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 400;"
+                data-i18n="hero_hello">Hello,</h3>
+            <h2 class="hero-title reveal-text" data-i18n="hero_title">I'm Aidan Anu Sam.</h2>
+            <p class="hero-subtitle reveal-text" data-i18n="hero_subtitle">Aspiring Computer Science Engineer building
+                the future.</p>
+            <div class="hero-cta reveal-text" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="#about" class="btn btn-primary" data-i18n="hero_explore">Explore My World</a>
+                <a href="#" class="btn btn-outline" download="Aidan_Anu_Sam_Resume.pdf" data-i18n="hero_resume">Download
+                    Resume</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span data-i18n="scroll_indicator">Scroll</span>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h3 class="section-heading reveal" data-i18n="about_heading">My Journey</h3>
+            <div class="about-grid reveal">
+                <div class="about-text">
+                    <p class="super-text" data-i18n="about_p1">
+                        It started with curiosity. The need to understand how things worked beneath the surface.
+                    </p>
+                    <p data-i18n="about_p2">
+                        I recently completed my 12th grade and am currently applying to colleges for a B.Tech in
+                        Computer Science Engineering. I am deeply passionate about technology, software development, and
+                        solving complex problems. Over time, that curiosity became focus. The more I learned, the more I
+                        wanted to build things that felt intentional.
+                    </p>
+                    <p data-i18n="about_p3">
+                        What I build tomorrow is shaped by everything I am learning today: curiosity, discipline, and a
+                        constant drive to improve.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-i18n="stat1_num">12th</span>
+                        <span class="stat-label" data-i18n="stat1_label">Grade Completed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-i18n="stat2_num">B.Tech</span>
+                        <span class="stat-label" data-i18n="stat2_label">CSE Aspirant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h3 class="section-heading reveal" data-i18n="projects_heading">Featured Work</h3>
+            <div class="projects-grid">
+                <!-- Placeholder Project 1 -->
+                <div class="project-card reveal">
+                    <div class="project-image" style="background: linear-gradient(135deg, #FF6B6B, #556270);"></div>
+                    <div class="project-info">
+                        <h4 data-i18n="proj1_title">Vision API Explorer</h4>
+                        <p data-i18n="proj1_desc">A web application built to test and explore image recognition
+                            technologies in real-time.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder Project 2 -->
+                <div class="project-card reveal" style="transition-delay: 0.1s;">
+                    <div class="project-image" style="background: linear-gradient(135deg, #00C9FF, #92FE9D);"></div>
+                    <div class="project-info">
+                        <h4 data-i18n="proj2_title">Algorithm Visualizer</h4>
+                        <p data-i18n="proj2_desc">An interactive, educational tool allowing students to visualize
+                            sorting algorithms step-by-step.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>HTML5</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder Project 3 -->
+                <div class="project-card reveal" style="transition-delay: 0.2s;">
+                    <div class="project-image" style="background: linear-gradient(135deg, #F09819, #EDDE5D);"></div>
+                    <div class="project-info">
+                        <h4 data-i18n="proj3_title">Portfolio V1</h4>
+                        <p data-i18n="proj3_desc">My personal portfolio built entirely with semantic HTML, vanilla CSS
+                            with deep dark mode aesthetics, and JavaScript.</p>
+                        <div class="project-tags">
+                            <span>Web Design</span>
+                            <span>Framer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates">
+        <div class="container">
+            <h3 class="section-heading reveal" data-i18n="cert_heading">Certificates & Achievements</h3>
+            <div class="projects-grid">
+                <!-- Certificate 1 -->
+                <div class="project-card reveal">
+                    <div class="project-image"
+                        style="background: linear-gradient(135deg, #11998e, #38ef7d); display: flex; align-items: center; justify-content: center;">
+                        <span
+                            style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: rgba(255,255,255,0.8);"
+                            data-i18n="cert1_badge">Certificate</span>
+                    </div>
+                    <div class="project-info">
+                        <h4 data-i18n="cert1_title">Introduction to Cybersecurity</h4>
+                        <p data-i18n="cert1_desc">Issued by Cisco Networking Academy.</p>
+                        <div class="project-tags">
+                            <span>2024</span>
+                            <span data-i18n="tag_security">Security</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Certificate 2 -->
+                <div class="project-card reveal" style="transition-delay: 0.1s;">
+                    <div class="project-image"
+                        style="background: linear-gradient(135deg, #8E2DE2, #4A00E0); display: flex; align-items: center; justify-content: center;">
+                        <span
+                            style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: rgba(255,255,255,0.8);"
+                            data-i18n="cert2_badge">Certificate</span>
+                    </div>
+                    <div class="project-info">
+                        <h4 data-i18n="cert2_title">Python for Data Science</h4>
+                        <p data-i18n="cert2_desc">Issued by IBM via Coursera.</p>
+                        <div class="project-tags">
+                            <span>2025</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Certificate 3 -->
+                <div class="project-card reveal" style="transition-delay: 0.2s;">
+                    <div class="project-image"
+                        style="background: linear-gradient(135deg, #fc4a1a, #f7b733); display: flex; align-items: center; justify-content: center;">
+                        <span
+                            style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: rgba(255,255,255,0.8);"
+                            data-i18n="cert3_badge">Certificate</span>
+                    </div>
+                    <div class="project-info">
+                        <h4 data-i18n="cert3_title">CS50: Introduction to Computer Science</h4>
+                        <p data-i18n="cert3_desc">Issued by Harvard University. Comprehensive foundation in algorithms
+                            and software development.</p>
+                        <div class="project-tags">
+                            <span>2025</span>
+                            <span>CS50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h3 class="section-heading reveal" data-i18n="contact_heading">Let's Connect</h3>
+            <div class="contact-content reveal">
+                <p class="contact-text"><span data-i18n="contact_quote">"The Best Way to Predict the Future, Is To
+                        Create It."</span><br><br><span data-i18n="contact_desc">I'm constantly exploring new
+                        opportunities and taking on exciting projects. Whether you have a question or just want to say
+                        hi, feel free to reach out!</span></p>
+
+                <div class="social-links">
+                    <a href="https://instagram.com/alaid_08" target="_blank" rel="noopener noreferrer"
+                        class="social-btn">
+                        <span class="platform">Instagram</span>
+                        <span class="handle">@alaid_08</span>
+                    </a>
+                    <a href="https://x.com/alaid_10" target="_blank" rel="noopener noreferrer" class="social-btn">
+                        <span class="platform">X (Twitter)</span>
+                        <span class="handle">@alaid_10</span>
+                    </a>
+                    <a href="https://wa.me/97333494353" target="_blank" rel="noopener noreferrer" class="social-btn">
+                        <span class="platform">WhatsApp</span>
+                        <span class="handle">+973 33494353</span>
+                    </a>
+                </div>
+
+                <a href="https://cal.com/aidan-anu-sam/meet" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline" style="margin-top: 3rem;" data-i18n="contact_btn">Say Hello</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div id="footer-greeting-placeholder" style="display: flex; justify-content: center; margin-bottom: 2rem;">
+            </div>
+            <div class="footer-content">
+                <p data-i18n="footer_rights">&copy; 2026 Aidan Anu Sam. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#hero" data-i18n="footer_top">Back to top ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
