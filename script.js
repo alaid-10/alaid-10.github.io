@@ -52,6 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
         dismissSplash({ type: 'auto-timeout' });
     }, 5000);
 
+    // If no splash screen exists (e.g. blog page), immediately reveal everything
+    if (!splashScreen) {
+        document.body.classList.remove('no-scroll');
+        document.querySelectorAll('.reveal, .reveal-text').forEach(el => {
+            el.classList.add('active');
+        });
+    }
+
     /* --- Dynamic Greetings (25 Languages) --- */
     const greetings = [
         "Hello",            // English
@@ -143,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* --- Internationalization (i18n) Logic --- */
     const translations = {
         en: {
-            nav_about: "About", nav_work: "Work", nav_cert: "Certificates", nav_contact: "Contact", nav_lang: "Language",
+            nav_blog: "Blog", nav_portfolio: "Portfolio", nav_about: "About", nav_work: "Work", nav_cert: "Certificates", nav_contact: "Contact", nav_lang: "Language",
             hero_hello: "Hello,", hero_title: "I'm Aidan Anu Sam.", hero_subtitle: "Aspiring Computer Science Engineer building the future.",
             hero_explore: "Explore My World", hero_resume: "Download Resume", scroll_indicator: "Scroll",
             about_heading: "My Journey",
@@ -166,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footer_rights: "© 2026 Aidan Anu Sam. All rights reserved.", footer_top: "Back to top ↑"
         },
         ar: {
-            nav_about: "نبذة", nav_work: "أعمالي", nav_cert: "شهادات", nav_contact: "اتصال", nav_lang: "لغة",
+            nav_blog: "مدونة", nav_portfolio: "أعمالي البارزة", nav_about: "نبذة", nav_work: "أعمالي", nav_cert: "شهادات", nav_contact: "اتصال", nav_lang: "لغة",
             hero_hello: "مرحبًا،", hero_title: "أنا إيدان أنو سام.", hero_subtitle: "مهندس علوم كمبيوتر طموح يبني المستقبل.",
             hero_explore: "استكشف عالمي", hero_resume: "تحميل السيرة الذاتية", scroll_indicator: "تمرير",
             about_heading: "رحلتي",
@@ -189,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footer_rights: "© 2026 إيدان أنو سام. جميع الحقوق محفوظة.", footer_top: "العودة للأعلى ↑"
         },
         ml: {
-            nav_about: "കുറിച്ച്", nav_work: "ജോലികൾ", nav_cert: "സർട്ടിഫിക്കറ്റുകൾ", nav_contact: "ബന്ധപ്പെടുക", nav_lang: "ഭാഷ",
+            nav_blog: "ബ്ലോഗ്", nav_portfolio: "പോർട്ട്ഫോളിയോ", nav_about: "കുറിച്ച്", nav_work: "ജോലികൾ", nav_cert: "സർട്ടിഫിക്കറ്റുകൾ", nav_contact: "ബന്ധപ്പെടുക", nav_lang: "ഭാഷ",
             hero_hello: "നമസ്കാരം,", hero_title: "ഞാൻ ഐഡൻ അനു സാം.", hero_subtitle: "ഭാവി കെട്ടിപ്പടുക്കാൻ ആഗ്രഹിക്കുന്ന കമ്പ്യൂട്ടർ സയൻസ് എഞ്ചിനീയർ.",
             hero_explore: "എന്റെ ലോകം കാണുക", hero_resume: "റെസ്യൂമെ ഡൗൺലോഡ്", scroll_indicator: "താഴേക്ക്",
             about_heading: "എന്റെ യാത്ര",
@@ -241,5 +249,24 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.removeAttribute('dir');
         }
     });
+
+    /* --- WhatsApp Blur Interaction --- */
+    const waBtn = document.getElementById('wa-action-btn');
+    if(waBtn) {
+        waBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if(this.classList.contains('revealed')) {
+                // If already revealed, navigate
+                window.open(this.getAttribute('data-link'), '_blank');
+            } else {
+                // First click: reveal
+                this.classList.add('revealed');
+                const textEl = document.getElementById('wa-display-text');
+                if(textEl) {
+                    textEl.innerText = this.getAttribute('data-number');
+                }
+            }
+        });
+    }
 
 });

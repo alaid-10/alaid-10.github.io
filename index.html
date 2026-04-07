@@ -12,11 +12,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="no-scroll">
+    <!-- Fixed Top Logo -->
+    <div class="top-logo">alaid.</div>
+
+    <!-- Top Circular Navigation -->
+    <nav class="top-nav-pill">
+        <a href="blog.html" class="nav-pill-item" data-i18n="nav_blog">Blog</a>
+        <a href="index.html" class="nav-pill-item active" data-i18n="nav_portfolio">Portfolio</a>
+    </nav>
 
     <!-- Splash Screen -->
     <div id="splash-screen" class="splash-screen">
@@ -107,27 +116,72 @@
             <div class="about-grid reveal">
                 <div class="about-text">
                     <p class="super-text" data-i18n="about_p1">
-                        It started with curiosity. The need to understand how things worked beneath the surface.
+                        Curiosity didn't just spark an interest — it became a direction.
                     </p>
                     <p data-i18n="about_p2">
-                        I recently completed my 12th grade and am currently applying to colleges for a B.Tech in
-                        Computer Science Engineering. I am deeply passionate about technology, software development, and
-                        solving complex problems. Over time, that curiosity became focus. The more I learned, the more I
-                        wanted to build things that felt intentional.
+                        I'm Aidan — a tech aspirant and the current <strong>Chief Marketing Officer at Blue Sky WLL</strong>, based in Bahrain. After completing <strong>14 years at the Indian School Bahrain</strong>, I'm now channelling that foundation toward a B.Tech in Computer Science Engineering at a top NIT in India.
                     </p>
                     <p data-i18n="about_p3">
-                        What I build tomorrow is shaped by everything I am learning today: curiosity, discipline, and a
-                        constant drive to improve.
+                        I thrive at the intersection of technology and creativity — whether it's architecting intuitive web experiences, steering digital strategy, or solving complex problems with elegant code. I've built hands-on expertise in social media management and web design, using both to drive measurable impact. What I build tomorrow is defined by the discipline and relentless curiosity I cultivate today.
                     </p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-card">
-                        <span class="stat-number" data-i18n="stat1_num">12th</span>
-                        <span class="stat-label" data-i18n="stat1_label">Grade Completed</span>
+                        <span class="stat-number" data-i18n="stat1_num">CMO</span>
+                        <span class="stat-label" data-i18n="stat1_label">Blue Sky WLL, Bahrain</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number" data-i18n="stat2_num">B.Tech</span>
-                        <span class="stat-label" data-i18n="stat2_label">CSE Aspirant</span>
+                        <span class="stat-number" data-i18n="stat2_num">14 Yrs</span>
+                        <span class="stat-label" data-i18n="stat2_label">Indian School Bahrain</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-i18n="stat3_num">NIT</span>
+                        <span class="stat-label" data-i18n="stat3_label">B.Tech CSE Aspirant</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Currently Doing -->
+            <div class="currently-doing reveal">
+                <h4 class="currently-heading">🚀 What I'm Currently Doing</h4>
+                <ul class="currently-list">
+                    <li><span class="cdot">📚</span> Preparing intensively for engineering entrance exams and NIT admissions</li>
+                    <li><span class="cdot">💻</span> Deepening my skills in web development — from UI design to JavaScript fundamentals</li>
+                    <li><span class="cdot">📈</span> Growing digital brands and online presence through data-driven social strategy</li>
+                    <li><span class="cdot">⚡</span> Prototyping tech projects that merge problem-solving with real-world creativity</li>
+                </ul>
+            </div>
+
+            <!-- Tech Marquee -->
+            <div class="tech-marquee-section reveal">
+                <h4 class="currently-heading">🛠️ Tech I'm Learning</h4>
+                <div class="marquee-container">
+                    <div class="marquee-track">
+                        <div class="marquee-item" data-tooltip="HTML"><img src="https://skillicons.dev/icons?i=html" alt="HTML"></div>
+                        <div class="marquee-item" data-tooltip="CSS"><img src="https://skillicons.dev/icons?i=css" alt="CSS"></div>
+                        <div class="marquee-item" data-tooltip="JavaScript"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript"></div>
+                        <div class="marquee-item" data-tooltip="Git"><img src="https://skillicons.dev/icons?i=git" alt="Git"></div>
+                        <div class="marquee-item" data-tooltip="GitHub"><img src="https://skillicons.dev/icons?i=github" alt="GitHub"></div>
+                        <div class="marquee-item" data-tooltip="VS Code"><img src="https://skillicons.dev/icons?i=vscode" alt="VS Code"></div>
+                        <div class="marquee-item" data-tooltip="Figma"><img src="https://skillicons.dev/icons?i=figma" alt="Figma"></div>
+                        <div class="marquee-item" data-tooltip="Java"><img src="https://skillicons.dev/icons?i=java" alt="Java"></div>
+                        <div class="marquee-item" data-tooltip="MySQL"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL"></div>
+                        <div class="marquee-item" data-tooltip="Notion"><img src="https://skillicons.dev/icons?i=notion" alt="Notion"></div>
+                        <div class="marquee-item" data-tooltip="Photoshop"><img src="https://skillicons.dev/icons?i=ps" alt="Photoshop"></div>
+                        <div class="marquee-item" data-tooltip="WordPress"><img src="https://skillicons.dev/icons?i=wordpress" alt="WordPress"></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="marquee-item" data-tooltip="HTML"><img src="https://skillicons.dev/icons?i=html" alt="HTML"></div>
+                        <div class="marquee-item" data-tooltip="CSS"><img src="https://skillicons.dev/icons?i=css" alt="CSS"></div>
+                        <div class="marquee-item" data-tooltip="JavaScript"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript"></div>
+                        <div class="marquee-item" data-tooltip="Git"><img src="https://skillicons.dev/icons?i=git" alt="Git"></div>
+                        <div class="marquee-item" data-tooltip="GitHub"><img src="https://skillicons.dev/icons?i=github" alt="GitHub"></div>
+                        <div class="marquee-item" data-tooltip="VS Code"><img src="https://skillicons.dev/icons?i=vscode" alt="VS Code"></div>
+                        <div class="marquee-item" data-tooltip="Figma"><img src="https://skillicons.dev/icons?i=figma" alt="Figma"></div>
+                        <div class="marquee-item" data-tooltip="Java"><img src="https://skillicons.dev/icons?i=java" alt="Java"></div>
+                        <div class="marquee-item" data-tooltip="MySQL"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL"></div>
+                        <div class="marquee-item" data-tooltip="Notion"><img src="https://skillicons.dev/icons?i=notion" alt="Notion"></div>
+                        <div class="marquee-item" data-tooltip="Photoshop"><img src="https://skillicons.dev/icons?i=ps" alt="Photoshop"></div>
+                        <div class="marquee-item" data-tooltip="WordPress"><img src="https://skillicons.dev/icons?i=wordpress" alt="WordPress"></div>
                     </div>
                 </div>
             </div>
@@ -253,19 +307,31 @@
                         opportunities and taking on exciting projects. Whether you have a question or just want to say
                         hi, feel free to reach out!</span></p>
 
-                <div class="social-links">
-                    <a href="https://instagram.com/alaid_08" target="_blank" rel="noopener noreferrer"
-                        class="social-btn">
-                        <span class="platform">Instagram</span>
-                        <span class="handle">@alaid_08</span>
+                <div class="social-links social-icons-grid">
+                    <a href="https://www.linkedin.com/in/aidan-anu-sam-6ab4a533b/" target="_blank" rel="noopener noreferrer" class="social-icon-card">
+                        <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
+                        <span>aidan-anu-sam</span>
                     </a>
-                    <a href="https://x.com/alaid_10" target="_blank" rel="noopener noreferrer" class="social-btn">
-                        <span class="platform">X (Twitter)</span>
-                        <span class="handle">@alaid_10</span>
+                    <a href="https://github.com/alaid-10" target="_blank" rel="noopener noreferrer" class="social-icon-card">
+                        <img src="https://skillicons.dev/icons?i=github" alt="GitHub">
+                        <span>alaid-10</span>
                     </a>
-                    <a href="https://wa.me/97333494353" target="_blank" rel="noopener noreferrer" class="social-btn">
-                        <span class="platform">WhatsApp</span>
-                        <span class="handle">+973 33494353</span>
+                    <a href="https://instagram.com/alaid_08" target="_blank" rel="noopener noreferrer" class="social-icon-card">
+                        <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram">
+                        <span>@alaid_08</span>
+                    </a>
+                    <a href="mailto:aidananusam@gmail.com" class="social-icon-card">
+                        <img src="https://skillicons.dev/icons?i=gmail" alt="Gmail">
+                        <span>aidananusam@gmail.com</span>
+                    </a>
+                    <a href="#" id="wa-action-btn" class="social-icon-card whatsapp-action" data-number="+973 33494353" data-link="https://wa.me/97333494353">
+                        <span class="wa-icon-wrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+                                <circle cx="24" cy="24" r="24" fill="#25D366"/>
+                                <path fill="#fff" d="M34.6 13.4A14.9 14.9 0 0 0 24 9C16 9 9.5 15.5 9.5 23.5c0 2.6.7 5.1 2 7.3L9 39l8.4-2.2a14.9 14.9 0 0 0 6.6 1.6h.1c8 0 14.4-6.5 14.4-14.5 0-3.9-1.5-7.5-4-10.5zm-10.6 22.3a12.4 12.4 0 0 1-6.3-1.7l-.4-.3-4.9 1.3 1.3-4.8-.3-.5A12.2 12.2 0 0 1 11.7 23.5c0-6.8 5.5-12.3 12.3-12.3 3.3 0 6.4 1.3 8.7 3.6s3.6 5.4 3.6 8.7c0 6.8-5.5 12.2-12.3 12.2zm6.7-9.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2s-1 1.2-1.2 1.5c-.2.3-.4.3-.8.1s-1.5-.6-2.8-1.8c-1-.9-1.7-2-1.9-2.4-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.6.1-.2 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.5s-1.2 1.2-1.2 2.9 1.3 3.3 1.4 3.6c.2.2 2.5 3.9 6.2 5.4 3.7 1.5 3.7 1 4.3.9.6 0 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.7-.5z"/>
+                            </svg>
+                        </span>
+                        <span id="wa-display-text" class="filter-blur">🇧🇭 Click to reveal</span>
                     </a>
                 </div>
 
