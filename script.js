@@ -92,31 +92,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const greetingElement = document.getElementById('dynamic-greeting');
     let currentIndex = 0;
 
-    // Change greeting every 1 second with a faster fade effect
-    setInterval(() => {
-        // Fade out
-        greetingElement.style.opacity = '0';
-        greetingElement.style.transform = 'translateY(-20px)';
-        
-        setTimeout(() => {
-            // Update text
-            currentIndex = (currentIndex + 1) % greetings.length;
-            greetingElement.textContent = greetings[currentIndex];
+    if (greetingElement) {
+        // Change greeting every 1 second with a faster fade effect
+        setInterval(() => {
+            // Fade out
+            greetingElement.style.opacity = '0';
+            greetingElement.style.transform = 'translateY(-20px)';
             
-            // Re-setup initial transform for fade in
-            greetingElement.style.transform = 'translateY(20px)';
-            
-            // Force reflow
-            void greetingElement.offsetWidth;
-            
-            // Fade in
-            greetingElement.style.opacity = '1';
-            greetingElement.style.transform = 'translateY(0)';
-        }, 200); // Wait 200ms before swapping
-    }, 1000); 
+            setTimeout(() => {
+                // Update text
+                currentIndex = (currentIndex + 1) % greetings.length;
+                greetingElement.textContent = greetings[currentIndex];
+                
+                // Re-setup initial transform for fade in
+                greetingElement.style.transform = 'translateY(20px)';
+                
+                // Force reflow
+                void greetingElement.offsetWidth;
+                
+                // Fade in
+                greetingElement.style.opacity = '1';
+                greetingElement.style.transform = 'translateY(0)';
+            }, 200); // Wait 200ms before swapping
+        }, 1000); 
 
-    // Initial greeting transition style setup
-    greetingElement.style.transition = 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)';
+        // Initial greeting transition style setup
+        greetingElement.style.transition = 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)';
+    }
 
 
     /* --- Intersection Observer for Scroll Animations --- */
@@ -222,33 +224,35 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const langSelector = document.getElementById('lang-selector');
-    langSelector.addEventListener('change', (e) => {
-        const lang = e.target.value;
-        const dict = translations[lang];
-        
-        // Update all translated elements
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if(dict[key]) {
-                el.innerText = dict[key];
+    if (langSelector) {
+        langSelector.addEventListener('change', (e) => {
+            const lang = e.target.value;
+            const dict = translations[lang];
+            
+            // Update all translated elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(dict[key]) {
+                    el.innerText = dict[key];
+                }
+            });
+
+            // Update translated tooltips
+            document.querySelectorAll('[data-i18n-title]').forEach(el => {
+                const key = el.getAttribute('data-i18n-title');
+                if(dict[key]) {
+                    el.title = dict[key];
+                }
+            });
+
+            // Set RTL support for Arabic
+            if(lang === 'ar') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            } else {
+                document.documentElement.removeAttribute('dir');
             }
         });
-
-        // Update translated tooltips
-        document.querySelectorAll('[data-i18n-title]').forEach(el => {
-            const key = el.getAttribute('data-i18n-title');
-            if(dict[key]) {
-                el.title = dict[key];
-            }
-        });
-
-        // Set RTL support for Arabic
-        if(lang === 'ar') {
-            document.documentElement.setAttribute('dir', 'rtl');
-        } else {
-            document.documentElement.removeAttribute('dir');
-        }
-    });
+    }
 
     /* --- WhatsApp Blur Interaction --- */
     const waBtn = document.getElementById('wa-action-btn');
@@ -265,6 +269,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(textEl) {
                     textEl.innerText = this.getAttribute('data-number');
                 }
+            }
+        });
+    }
+
+    /* --- Comments Modal Logic --- */
+    const openCommentsBtn = document.getElementById('open-comments');
+    const closeCommentsBtn = document.getElementById('close-comments');
+    const commentsModal = document.getElementById('comments-modal');
+
+    if (openCommentsBtn && commentsModal) {
+        openCommentsBtn.addEventListener('click', () => {
+            commentsModal.classList.add('active');
+            document.body.classList.add('modal-open');
+        });
+
+        const closeModal = () => {
+            commentsModal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        };
+
+        if (closeCommentsBtn) {
+            closeCommentsBtn.addEventListener('click', closeModal);
+        }
+
+        // Close on clicking outside the modal container
+        commentsModal.addEventListener('click', (e) => {
+            if (e.target === commentsModal) {
+                closeModal();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && commentsModal.classList.contains('active')) {
+                closeModal();
             }
         });
     }

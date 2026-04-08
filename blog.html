@@ -15,6 +15,8 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Cusdis Comments -->
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </head>
 
 <body>
@@ -46,8 +48,32 @@
                 <br>
                 <p>Writing about what I learn isn't just about sharing knowledge; it's about forcing myself to fully understand the concepts I interact with daily. From wrestling with CSS positioning to exploring abstract backend structures, this blog will serve as a living record of my progress.</p>
             </div>
+
+            <!-- Comments Section Toggle -->
+            <div class="post-cta">
+                <button class="view-comments-btn" id="open-comments">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    View Comments
+                </button>
+            </div>
         </article>
     </main>
+
+    <!-- Comments Modal -->
+    <div class="modal-overlay" id="comments-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="close-comments">&times;</button>
+            <h2 style="font-family: var(--font-heading); margin-bottom: 2rem; color: #fff;">Comments</h2>
+            <div id="cusdis_thread"
+              data-host="https://cusdis.com"
+              data-app-id="5b0f53d9-143f-4720-9fe9-0453cf3b11cc"
+              data-page-id="week-1-connecting-the-dots"
+              data-page-url="blog.html#post-1"
+              data-page-title="Connecting the Dots"
+              data-theme="dark"
+            ></div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
